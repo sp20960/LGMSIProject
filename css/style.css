@@ -1,15 +1,86 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("./assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+header{
+  display: table;
+  width: 100%;
+  background-color: #090808;
+}
+
+header img{
+  display: table-cell;
+  width: 300px;
+  margin-left: 50px;
 }
 
 header>nav{
-  background-color: black;
-  text-decoration: none;
-  text-align: center;
-  
+  width: 100%;
+  text-align: right;
+  vertical-align: middle;
+  display: table-cell;
+  font-family: Raleway, sans-serif;
 }
 
-nav a{
-  
+li>a{
+  text-decoration: none;
+  color: #FFF8F8;
+}
+
+header>nav>ul>li {
+  display: inline-block;
+  margin: 0 15px; 
+}
+
+footer{
+  background-color: #ac9d9d;
+  display: inline-block;
+  width: 100%;
+  font-family: Raleway, sans-serif;
+}
+
+footer img{
+  width: 300px;
+  text-align: left;
+  height: 10%;
+}
+
+footer nav{
+  text-align: right;
+  position: relative;
+  padding: 30px;
+}
+
+footer nav ul{
+  display: inline-block;
+  text-align: right;
+}
+
+footer nav ul li{
+  list-style: none;
+}
+
+div{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+}
+
+div nav{
+  display: inline-block;
+  text-align: right;
+  font-family: Raleway, sans-serif;
+}
+
+.creativecommons{
+  display: inline-block; 
+  font-family: Raleway, sans-serif;
 }
