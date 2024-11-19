@@ -23,6 +23,7 @@ header{
 
 header img{
   width: 50%;
+  display: inline-block;
 }
 
 img[alt="menu"]{
@@ -30,7 +31,7 @@ img[alt="menu"]{
   width: 10%;
   position: fixed;
   right: 0;
-  top: 23px;
+  top: 10px;
   margin-right: 20px;
 
 }
