@@ -1,6 +1,12 @@
+:root{
+  --principal-color: #090808;
+  --secondary-color: #7D7D7D;
+  --accent-color: #FF0000;
+}
+
 @font-face {
   font-family: "Raleway";
-  src: url("./assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+  src: url("../assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
 }
 
 *{
@@ -8,4 +14,49 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header{
+  width: 100%;
+  background-color: var(--principal-color);
+  font-family: "Raleway";
+}
+
+header img{
+  width: 50%;
+}
+
+img[alt="menu"]{
+  display: inline-block;
+  width: 10%;
+  position: fixed;
+  right: 0;
+  top: 23px;
+  margin-right: 20px;
+
+}
+
+header nav{
+  position: fixed;
+  right: 0;
+
+}
+
+header nav ul{
+  list-style: none;
+}
+
+header nav ul li a{
+
+  color: var(--secondary-color);
+}
+
+header div{
+  text-align: center;
+
+}
+
+img[alt="lupa"]{
+  width: 5%;
+}
+
 
