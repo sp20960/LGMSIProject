@@ -2,6 +2,7 @@
   --principal-color: #090808;
   --secondary-color: #7D7D7D;
   --accent-color: #FF0000;
+  --text-color: #F9F6EE;
 }
 
 @font-face {
@@ -37,18 +38,50 @@ img[alt="menu"]{
 }
 
 header nav{
+  /* display: none; */
+  text-align: center;
+  height: 100%;
+  width: 70%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--secondary-color);
+
+}
+
+#btn-close{
   position: fixed;
   right: 0;
+  padding-top: 15px;
+  cursor: pointer;
+  width: fit-content;
+  transform: translateX(15%);
+}
 
+img[alt="logo-menu"]{
+  padding-top: 30px;
 }
 
 header nav ul{
   list-style: none;
+  padding-top: 80px;
+  
+}
+
+header nav ul li{
+  padding: 10px;
+
 }
 
 header nav ul li a{
+  font-size: 2em;
+  color: var(--text-color);
+}
 
-  color: var(--secondary-color);
+header nav ul li a:hover{
+  color: var(--accent-color);
+  font-weight: bold;
+
 }
 
 header div{
