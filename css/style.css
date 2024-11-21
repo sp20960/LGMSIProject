@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 
-header{
+header, footer{
   width: 100%;
   background-color: var(--principal-color);
   font-family: "Raleway";
@@ -38,7 +38,7 @@ img[alt="menu"]{
 }
 
 header nav{
-  /* display: none; */
+  display: none;
   text-align: center;
   height: 100%;
   width: 70%;
@@ -47,6 +47,14 @@ header nav{
   right: 0;
   background-color: var(--secondary-color);
 
+}
+
+.nav-visible{
+  display: block;
+}
+
+#btn-menu{
+  cursor: pointer;
 }
 
 #btn-close{
@@ -92,5 +100,54 @@ header div{
 img[alt="lupa"]{
   width: 5%;
 }
+
+main{
+  width: 100%;
+}
+
+footer{
+  width: 100%;
+  font-size: 1em;
+}
+
+footer img{
+  width: 50%;
+  display: inline-block;
+}
+
+footer nav{
+  display: inline-block;
+
+}
+
+footer nav ul{
+  list-style: none;
+}
+
+footer div{
+  font-size: 0.9em;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+footer hr{
+  border-color: var(--secondary-color);
+}
+
+footer div ul li{
+  display: inline-block;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+footer div+div{
+  width: 100%;
+  font-size: 0.8em;
+  color: var(--text-color);
+}
+
+
+
 
 
