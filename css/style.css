@@ -71,10 +71,6 @@ header nav{
   transform: translateX(15%);
 }
 
-img[alt="logo-menu"]{
-  padding-top: 30px;
-}
-
 header nav ul{
   list-style: none;
   padding-top: 80px;
@@ -96,9 +92,19 @@ header nav ul li a:hover{
 
 }
 
+header nav ul li:last-child{
+  border-radius: 10px;
+  background-color: var(--principal-color);
+  padding: 0px;
+  margin: 30px 60px;
+
+}
+
+header nav ul li:last-child a{
+  font-size: 1.5em;}
+
 header div{
   text-align: center;
-
 }
 
 img[alt="lupa"]{
@@ -142,7 +148,7 @@ footer nav ul{
   text-align: right;
   display: inline-block;
   padding-top: 20px;
-  width: 70%
+  width: 85%
 }
 
 #nav-menu nav ul li{
