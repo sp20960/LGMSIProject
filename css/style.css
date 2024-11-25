@@ -155,14 +155,13 @@ article{
   border-style: solid;
   border-width: 3px;
   border-radius: 10px;
+}
+
+article:nth-child(odd){
   margin-bottom: 10px;
 }
 
-img[alt="bugatti-tourbillon"]{
-  width: 100%;
-}
-
-img[alt="brabus-bigboy"]{
+main img{
   width: 100%;
 }
 
