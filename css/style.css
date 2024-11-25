@@ -175,7 +175,6 @@ main img{
 
 footer{
   width: 100%;
-  font-size: 1em;
 }
 
 footer img{
@@ -205,7 +204,7 @@ footer nav ul{
   text-align: right;
   display: inline-block;
   padding-top: 20px;
-  width: 85%
+  width: 85%;
 }
 
 #nav-footer nav ul li{
@@ -302,7 +301,17 @@ footer div+div{
     margin-bottom: 0;
   }
 
+  footer div ul li a{
+    text-decoration: none;
+    font-size: 1em;
+  }
 
+  #copy p{
+    font-size: 0.9em;
+  }
 
-
-
+  footer img{
+    margin-left: 200px;
+    width: 100px;
+  }
+}
