@@ -132,7 +132,6 @@ main h1,  main h2, main p{
 main h1{
   padding: 10px;
   text-decoration: solid;
-  display: inline-block;
   font-weight: 600;
   font-size: 1.2em;
 }
