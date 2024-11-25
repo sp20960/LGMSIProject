@@ -148,7 +148,7 @@ main hr{
 }
 
 main section{
-  display: inline-block;
+  display: block;
 }
 
 article{
@@ -173,7 +173,6 @@ footer{
 
 footer img{
   width: 60px;
-  display: inline-block;
   position: absolute;
   transform: translateX(30%);
   padding-top: 20px;
