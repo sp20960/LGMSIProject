@@ -44,7 +44,7 @@ img[alt="menu"]{
 
 header nav{
   display: none;
-  text-align: center;
+  text-align: center; 
   height: 100%;
   width: 70%;
   position: fixed;
@@ -95,19 +95,27 @@ header nav ul li a{
 header nav ul li a:hover{
   color: var(--accent-color);
   font-weight: bold;
-
 }
 
 header nav ul li:last-child{
-  border-radius: 10px;
-  background-color: var(--principal-color);
-  padding: 0px;
-  margin: 30px 60px;
-
+  padding-bottom: 60px;
 }
 
-header nav ul li:last-child a{
-  font-size: 1.5em;
+header button{
+  padding: 10px 50px;
+  border: solid;
+  border-radius: 10px;
+  background-color: var(--accent-color);
+}
+
+header button a{
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.3em;
+}
+
+img[alt="logo-menu"]{
+ padding-top: 60px;
 }
 
 header div{
@@ -240,6 +248,59 @@ footer div+div{
 #copy p{
   font-size: 0.7em;
 }
+
+@media (min-width: 1025px){
+
+  header nav{
+    display: inline-block;
+    width: 70%;
+    position: initial;
+    background-color: transparent;
+  }
+
+  header img{
+    width: 300px;
+    transform: translateY(40%);
+  }
+
+  header nav ul, header nav ul li, header nav ul li:last-child, header div{
+    padding-top: 0;
+    margin: 0;
+    display: inline-block;
+  }
+
+  header nav ul li a{
+    font-size: 1em;
+  }
+
+  img[alt="lupa"]{
+    width: 27px;
+  }
+
+  #btn-menu, #btn-close{
+    display: none;
+  }
+
+  img[alt="logo-menu"]{
+    display: none;
+  }
+
+  main section{
+    display: inline-block;
+  }
+
+  main img{
+    width: 100%;
+  }
+
+  main section article{
+    display: inline-block;
+    width: 40%;  
+  }
+
+  article:nth-child(odd){
+    margin-bottom: 0;
+  }
 
 
 
