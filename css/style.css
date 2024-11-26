@@ -10,6 +10,11 @@
   src: url("../assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
 }
 
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url();
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -106,6 +111,7 @@ header button{
   border: solid;
   border-radius: 10px;
   background-color: var(--accent-color);
+  cursor: pointer;
 }
 
 header button a{
@@ -142,6 +148,10 @@ main h1{
   text-decoration: solid;
   font-weight: 600;
   font-size: 1.2em;
+}
+
+main img{
+  border-radius: 10px;
 }
 
  h2{
@@ -288,8 +298,22 @@ footer div+div{
     display: inline-block;
   }
 
-  main img{
-    width: 100%;
+  img[alt="s15"]{
+    height: 320px;
+    object-fit: cover;
+  }
+
+  img[alt="bugatti-tourbillon"]{
+    height: 320px;
+    object-fit: cover;
+  }
+
+  article img[alt="brabus-bigboy"] h2{
+    padding: 0 10px;
+  }  
+
+  main h1{
+    font-size: 2em;
   }
 
   main section article{
@@ -299,6 +323,10 @@ footer div+div{
 
   article:nth-child(odd){
     margin-bottom: 0;
+  }
+  
+  main article:last-child{
+    margin-bottom: 10px;
   }
 
   footer div ul li a{
