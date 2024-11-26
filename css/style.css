@@ -299,12 +299,12 @@ footer div+div{
   }
 
   img[alt="s15"]{
-    height: 320px;
+    height: 400px;
     object-fit: cover;
   }
 
   img[alt="bugatti-tourbillon"]{
-    height: 320px;
+    height: 430px;
     object-fit: cover;
   }
 
