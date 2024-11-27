@@ -169,12 +169,15 @@ main section{
   display: block;
 }
 
-article{
+.card{
   border-style: solid;
   border-width: 3px;
   border-radius: 10px;
 }
 
+.card div{
+  padding: 0 20px;
+}
 article:nth-child(odd){
   margin-bottom: 10px;
 }
@@ -298,25 +301,16 @@ footer div+div{
     display: inline-block;
   }
 
-  img[alt="s15"]{
+  .card img{
     height: 400px;
     object-fit: cover;
   }
-
-  img[alt="bugatti-tourbillon"]{
-    height: 430px;
-    object-fit: cover;
-  }
-
-  article img[alt="brabus-bigboy"] h2{
-    padding: 0 10px;
-  }  
 
   main h1{
     font-size: 2em;
   }
 
-  main section article{
+  .card{
     display: inline-block;
     width: 40%;  
   }
