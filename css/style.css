@@ -299,6 +299,7 @@ footer div+div{
 
   main section{
     display: inline-block;
+    width: 100%;
   }
 
   .card img{
@@ -335,5 +336,63 @@ footer div+div{
   footer img{
     margin-left: 200px;
     width: 100px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 1024px){
+
+  header nav{
+    display: inline-block;
+    width: 60%;
+    position: initial;
+    background-color: transparent;
+  }
+
+  header img{
+    width: 200px;
+    transform: translateY(40%);
+  }
+
+  header nav ul, header nav ul li, header nav ul li:last-child, header div{
+    padding-top: 0;
+    margin: 0;
+    display: inline-block;
+  }
+
+  header nav ul li a{
+    font-size: 1em;
+  }
+
+  img[alt="lupa"]{
+    display: block;
+    width:27px;
+  }
+
+  #btn-menu, #btn-close{
+    display: none;
+  }
+
+  img[alt="logo-menu"]{
+    display: none;
+  }
+
+
+  .card{
+    width: 49%;
+    display: inline-block;
+  }
+
+  .card img{
+    height: 320px;
+    object-fit: cover;
+  }
+
+  #nav-footer a{
+    font-size: 1em;
+
+  }
+
+  #footer-terms a{
+    font-size: 1em;
   }
 }
