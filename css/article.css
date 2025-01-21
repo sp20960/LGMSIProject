@@ -1,0 +1,52 @@
+:root{
+    --principal-color: #090808;
+    --accent-color: #FF0000;
+    --text-color: #F9F6EE;
+    --secondary-color: #2b2b2b;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url("../assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+  }
+  
+  @font-face {
+    font-family: "Merriweather";
+    src: url(../assets/fonts/Merriweather/Merriweather-Regular.ttf);
+  }
+
+  main{
+    font-family: Raleway;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  h1{
+    font-size: 1.2em;
+  }
+
+  figcaption{
+    font-size: 0.5em;
+  }
+
+  h2{
+    font-size: 0.8em;
+  }
+
+  p{
+    font-size: 0.4em;
+    font-family: Merriweather;
+  }
+
+  img{
+    width: 400px;
+    border-radius: 10px;
+  }
+
+  section{
+    margin: 30px;
+  }
