@@ -26,27 +26,45 @@
   }
 
   h1{
-    font-size: 1.2em;
+    font-size: 1.8em;
+    padding-top: 20px;
   }
 
   figcaption{
-    font-size: 0.5em;
+    font-size: 0.7em;
+  }
+
+  div:nth-child(2){
+    padding: 0 10px;
+  }
+
+  .info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   h2{
-    font-size: 0.8em;
+    font-size: 1.4em;
+    font-family: Raleway;
+    padding: 30px 0;
   }
 
   p{
-    font-size: 0.4em;
+    font-size: 1.25em;
     font-family: Merriweather;
+    line-height: 1.45em;
   }
 
-  img{
-    width: 400px;
+  img[alt="like"]{
+    width: 25px;
+  }
+
+  img[alt="bugatti-tourbillon"]{
+    width: 390px;
     border-radius: 10px;
   }
 
   section{
-    margin: 30px;
+    margin: 20px;
   }
