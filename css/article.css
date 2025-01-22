@@ -63,6 +63,8 @@
   main img:nth-child(1){
     width: 290px;
     border-radius: 10px;
+    object-fit: cover;
+
   }
 
   h2 + img{
@@ -85,6 +87,11 @@
       "titulo titulo"
       "imagen texto" 
       ;
+    }
+
+    p{
+      font-size: 1em;
+      line-height: 30px;
     }
 
     div:nth-child(1){
