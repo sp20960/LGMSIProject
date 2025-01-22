@@ -60,11 +60,105 @@
     width: 25px;
   }
 
-  img[alt="bugatti-tourbillon"]{
-    width: 390px;
+  main img:nth-child(1){
+    width: 290px;
     border-radius: 10px;
+  }
+
+  h2 + img{
+    width:400px;
+    
   }
 
   section{
     margin: 20px;
+  }
+
+  @media (min-width: 1025px){
+    main{
+      height: 100vh;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      align-items: start;
+      grid-template-areas: 
+      "titulo titulo"
+      "imagen texto" 
+      ;
+    }
+
+    div:nth-child(1){
+      grid-area: titulo;
+    }
+
+    div:nth-child(2){
+      grid-area: imagen;     
+    }
+
+    main img:nth-child(1){
+      width: 600px;
+      height: 500px;
+      padding-top: 150px;
+    }
+
+    h2 + img{
+      width: 400px;
+
+    }
+
+    h1{
+      text-align: center;
+    }
+
+    section{
+      grid-area: texto;
+      overflow: scroll;
+      height: 80%;
+      border: 2px solid var(--accent-color);
+      border-radius: 4px;
+    }
+  }
+
+  @media(min-width: 577px) and (max-width: 1024px){
+    main{
+      height: 100vh;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      align-items: start;
+      grid-template-areas: 
+      "titulo titulo"
+      "imagen texto" 
+      ;
+    }
+
+    div:nth-child(1){
+      grid-area: titulo;
+    }
+
+    div:nth-child(2){
+      grid-area: imagen;     
+    }
+
+    main img:nth-child(1){
+      width: 400px;
+      padding-top: 150px;
+    }
+
+    h2 + img{
+      width: 300px;
+      
+    }
+
+    h1{
+      text-align: center;
+    }
+
+    section{
+      grid-area: texto;
+      overflow: scroll;
+      height: 80%;
+      border: 2px solid var(--accent-color);
+      border-radius: 4px;
+    }
   }

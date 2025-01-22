@@ -189,7 +189,11 @@
   
   footer div ul li a{
     text-decoration: none;
-    font-size: 0.7em;
+    font-size: 1em;
+  }
+
+  #footer-terms a{
+    font-size: 0.8em;
   }
   
   footer div+div{
