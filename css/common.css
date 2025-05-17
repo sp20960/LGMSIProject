@@ -21,25 +21,22 @@
     color: var(--text-color);
   }
   
-  header, footer{
+  header{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
     background-color: var(--principal-color);
     font-family: "Raleway";
   }
   
   header img{
     width: 200px;
-    display: inline-block;
   }
   
   img[alt="menu"]{
-    display: inline-block;
-    width: 35px;
-    position: fixed;
-    right: 0;
-    top: 10px;
+    width: 40px;
     margin-right: 20px;
-  
+    object-fit:contain;
   }
   
   header nav{
@@ -57,7 +54,8 @@
   }
   
   .nav-visible{
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
   
   #btn-menu, #btn-close{
@@ -119,35 +117,27 @@
    padding-top: 60px;
   }
   
-  header div{
+  header nav div{
     text-align: center;
   }
   
   img[alt="lupa"]{
-    width: 20px;
+    display: none;
   }
 
   footer{
     width: 100%;
+    display: flex;
+    justify-content:flex-end ;
+    flex-direction: column;
+    background-color: var(--principal-color);
+    font-family: "Raleway";
+
   }
   
-  footer img{
+  footer div img{
     width: 60px;
-    position: absolute;
-    transform: translateX(30%);
-    padding-top: 20px;
-    
-  }
-  
-  footer nav{
-    display: inline-block;
-    position: relative;
-    right: 0;
-  }
-  
-  footer nav+nav{
-    position: relative;
-    right: 3;
+    transform: translateX(30%); 
   }
   
   footer nav ul{
@@ -155,10 +145,14 @@
   }
   
   #nav-footer{
+    width: 100%;
     text-align: right;
-    display: inline-block;
-    padding-top: 20px;
-    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-right: 5px;
+    width: 100%;
   }
   
   #nav-footer nav ul li{
@@ -172,7 +166,6 @@
   footer div{
     font-size: 0.8em;
     width: 100%;
-    display: inline-block;
     text-align: center;
   }
   
@@ -181,15 +174,19 @@
   }
   
   footer div ul li{
-    display: inline-block;
     padding-right: 10px;
     padding-top: 10px;
-  
   }
   
   footer div ul li a{
     text-decoration: none;
     font-size: 1em;
+  }
+
+  #footer-terms ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
   }
 
   #footer-terms a{
@@ -208,29 +205,44 @@
 
   @media (min-width: 1025px){
 
+    header{
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
     header nav{
-      display: inline-block;
-      width: 70%;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      width: 40%;
       position: initial;
       background-color: transparent;
     }
-  
+
     header img{
       width: 300px;
-      transform: translateY(40%);
+      }
+
+    header nav ul li, header nav ul li:last-child{
+      padding: 0;
     }
-  
-    header nav ul, header nav ul li, header nav ul li:last-child, header div{
-      padding-top: 0;
-      margin: 0;
-      display: inline-block;
+
+    header nav ul{
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      align-items: center;
     }
   
     header nav ul li a{
       font-size: 1em;
     }
-  
+
+
     img[alt="lupa"]{
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 27px;
     }
   
@@ -240,6 +252,10 @@
   
     img[alt="logo-menu"]{
       display: none;
+    }
+
+    #nav-footer{
+      justify-content:space-evenly;
     }
 
     footer div ul li a{
@@ -260,30 +276,39 @@
 @media (min-width: 577px) and (max-width: 1024px){
 
   header nav{
-    display: inline-block;
-    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 50%;
     position: initial;
     background-color: transparent;
   }
 
   header img{
-    width: 200px;
-    transform: translateY(40%);
+    width: 250px;
+    object-fit: contain;
   }
 
-  header nav ul, header nav ul li, header nav ul li:last-child, header div{
-    padding-top: 0;
-    margin: 0;
-    display: inline-block;
+  header nav ul{
+    display: flex;
+    gap: 20px;
+    align-items: center;
   }
+
+  header nav ul, header nav ul li, header nav ul li:last-child{
+    padding: 0;
+  }
+
 
   header nav ul li a{
     font-size: 1em;
   }
 
   img[alt="lupa"]{
-    display: block;
+    display: initial;
     width:27px;
+    margin-right: 20px;
   }
 
   #btn-menu, #btn-close{
