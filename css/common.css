@@ -50,12 +50,12 @@
     right: 0;
     z-index: 1;
     background-color: var(--secondary-color);
-  
   }
   
   .nav-visible{
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   
   #btn-menu, #btn-close{
@@ -132,7 +132,6 @@
     flex-direction: column;
     background-color: var(--principal-color);
     font-family: "Raleway";
-
   }
   
   footer div img{
@@ -221,7 +220,7 @@
 
     header img{
       width: 300px;
-      }
+    }
 
     header nav ul li, header nav ul li:last-child{
       padding: 0;
@@ -237,7 +236,6 @@
     header nav ul li a{
       font-size: 1em;
     }
-
 
     img[alt="lupa"]{
       display: flex;
@@ -261,17 +259,17 @@
     footer div ul li a{
         text-decoration: none;
         font-size: 1em;
-      }
-    
-      #copy p{
-        font-size: 0.9em;
-      }
-    
-      footer img{
-        margin-left: 200px;
-        width: 100px;
-      }
     }
+    
+    #copy p{
+      font-size: 0.9em;
+    }
+    
+    footer img{
+      margin-left: 200px;
+      width: 100px;
+    }
+  }
 
 @media (min-width: 577px) and (max-width: 1024px){
 
@@ -300,7 +298,6 @@
     padding: 0;
   }
 
-
   header nav ul li a{
     font-size: 1em;
   }
@@ -321,7 +318,6 @@
 
   #nav-footer a{
     font-size: 1em;
-
   }
 
   #footer-terms a{
