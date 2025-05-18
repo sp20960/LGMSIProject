@@ -89,6 +89,7 @@
   header nav ul li a{
     font-size: 2em;
     text-decoration: none;
+    cursor: pointer;
   }
   
   header nav ul li a:hover{
@@ -117,6 +118,10 @@
   img[alt="logo-menu"]{
    padding-top: 60px;
   }
+
+  img[alt="logo"]:hover, img[alt="logo-menu"]:hover{
+    cursor: pointer;
+  }
   
   header nav div{
     text-align: center;
@@ -124,6 +129,7 @@
   
   img[alt="lupa"]{
     display: none;
+    cursor: pointer;
   }
 
   footer{
@@ -138,6 +144,7 @@
   footer div img{
     width: 60px;
     transform: translateX(30%); 
+    cursor: pointer;
   }
   
   footer nav ul{
@@ -181,6 +188,7 @@
   footer div ul li a{
     text-decoration: none;
     font-size: 0.8em;
+    cursor: pointer;
   }
 
   #footer-terms ul{
@@ -251,15 +259,11 @@
   
     img[alt="logo-menu"]{
       display: none;
-    }
-
-    #nav-footer{
-      justify-content:space-evenly;
-    }
+    }   
 
     footer div ul li a{
         text-decoration: none;
-        font-size: 0.9em;
+        font-size: 0.em;
     }
     
     #copy p{
@@ -317,10 +321,10 @@
   }
 
   #nav-footer a{
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 
   #footer-terms a{
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
 }

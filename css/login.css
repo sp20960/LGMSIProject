@@ -68,6 +68,15 @@ input[type="submit"]{
   padding: 5px;
 }
 
+.login-container a{
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+.login-container a:hover{
+  cursor: pointer;
+}
+
 @media (min-width: 1025px){
 
   .login-container{
