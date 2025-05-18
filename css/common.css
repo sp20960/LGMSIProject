@@ -25,6 +25,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--principal-color);
     font-family: "Raleway";
   }
@@ -179,7 +180,7 @@
   
   footer div ul li a{
     text-decoration: none;
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   #footer-terms ul{
@@ -189,7 +190,7 @@
   }
 
   #footer-terms a{
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
   
   footer div+div{
@@ -234,7 +235,7 @@
     }
   
     header nav ul li a{
-      font-size: 1em;
+      font-size: 1.3em;
     }
 
     img[alt="lupa"]{
@@ -258,7 +259,7 @@
 
     footer div ul li a{
         text-decoration: none;
-        font-size: 1em;
+        font-size: 0.9em;
     }
     
     #copy p{
@@ -276,7 +277,6 @@
   header nav{
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 30px;
     width: 50%;
     position: initial;
@@ -299,7 +299,7 @@
   }
 
   header nav ul li a{
-    font-size: 1em;
+    font-size: 1.3em;
   }
 
   img[alt="lupa"]{
@@ -317,10 +317,10 @@
   }
 
   #nav-footer a{
-    font-size: 1em;
+    font-size: 0.9em;
   }
 
   #footer-terms a{
-    font-size: 1em;
+    font-size: 0.8em;
   }
 }

@@ -1,0 +1,90 @@
+:root{
+  --principal-color: #090808;
+  --accent-color: #FF0000;
+  --text-color: #f9f6eed4;
+  --secondary-color: #2b2b2b;
+}
+
+main{
+  height: 70vh;
+  text-align: center;
+  display: flex;
+  background-color: var(--secondary-color);
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway";
+}
+
+.login-container{
+  background-color: var(--principal-color);
+  border-radius: 10px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 6px 5px 5px var(--principal-color);
+}
+
+h2{
+  color:var(--text-color);
+  padding-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px 20px 50px;
+}
+
+input[type="text"]{
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+input[type="password"]{
+  margin-bottom: 50px;
+  padding: 10px;
+}
+
+.checkbox-container{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox-container label{
+  color: var(--text-color);
+  font-size: 0.7em;
+}
+
+input[type="submit"]{
+  border-color: var(--accent-color);
+  border-radius: 5px;
+  text-align: center;
+  color: var(--principal-color);
+  padding: 5px;
+}
+
+@media (min-width: 1025px){
+
+  .login-container{
+    width: 50%;
+    padding: 20px;
+  }
+
+
+  form{
+    padding: 30px 70px 30px 70px;
+  }
+  
+}
+
+@media (min-width: 577px) and (max-width: 1024px){
+  .login-container{
+    width: 60%;
+    padding: 20px;
+  }
+}
