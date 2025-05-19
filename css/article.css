@@ -61,9 +61,8 @@
   }
 
   main img:nth-child(1){
-    width: 290px;
+    width: 400px;
     border-radius: 10px;
-    object-fit: cover;
 
   }
 

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+
+  <title>TurboTalks</title>
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+   <header>
+    <!-- Header-->
+    <img src="../assets/img/logo.png" alt="logo" />
+
+    <img id="btn-menu" src="../assets/img/menu.png" alt="menu" />
+
+    <!--Navegation bar-->
+    <nav id="nav-header">
+      <div id="btn-close">
+        <img src="../assets/img/close-menu.png" alt="close-menu" />
+      </div>
+      <ul>
+        <li><a class="links">Home</a></li>
+        <li><a class="links">Qui som?</a></li>
+        <li><a class="links">Contact</a></li>
+      </ul>
+      <div>
+        <button id="login-id"><a>Login</a></button>
+      </div>
+
+      <img src="../assets/img/logo.png" alt="logo-menu" />
+    </nav>
+
+    <img src="../assets/img/lupa.png" alt="lupa" />
+  </header>
+
+  <main>
+    <div class="login-container">
+      <h2>Sign Up</h2>
+      <hr>
+      <form action="">
+        <input type="text" name="user" id="username_id" placeholder="Username" required>
+        <input type="password" name="password" id="password_id" placeholder="Password" required>
+        <div class="checkbox-container">
+          <input type="checkbox" name="politica" id="politica_id" required>
+          <label for="politica">Aceptar las Políticas de Privacidad</label>
+        </div>
+        <input type="submit" value="Log in">
+      </form>
+      <a>Registrarse</a>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Footer-->
+
+    <!--Nav-->
+    <div id="nav-footer">
+      <img src="../assets/img/logo-simple.png" alt="logo-reduit" />
+
+      <nav>
+        <ul>
+          <li><a class="links">Home</a></li>
+          <li><a class="links">Qui som?</a></li>
+          <li><a class="links">Contact</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <ul>
+          <li><a class="links" href="#">Facebook</a></li>
+          <li><a class="links" href="#">Instagram</a></li>
+          <li><a class="links" href="#">Twitter</a></li>
+        </ul>
+      </nav>
+    </div>
+    <hr />
+    <div id="footer-terms">
+      <nav>
+        <ul>
+          <li><a class="links" href="#">Terms & Conditions</a></li>
+          <li><a class="links" href="#">Privacy Policy</a></li>
+          <li><a class="links" href="#">Cookie Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!--CC-->
+    <div id="copy">
+      <p>© 2024 TurboTalks. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/index.js"></script>
+</body>
+
+</html>

@@ -89,6 +89,7 @@
   header nav ul li a{
     font-size: 2em;
     text-decoration: none;
+    font-weight: 500;
     cursor: pointer;
   }
   
@@ -135,6 +136,7 @@
   footer{
     width: 100%;
     display: flex;
+    position: absolute;
     justify-content:flex-end ;
     flex-direction: column;
     background-color: var(--principal-color);
@@ -143,7 +145,6 @@
   
   footer div img{
     width: 60px;
-    transform: translateX(30%); 
     cursor: pointer;
   }
   
@@ -211,12 +212,7 @@
     font-size: 0.7em;
   }
 
-  @media (min-width: 1025px){
-
-    header{
-      justify-content: space-evenly;
-      align-items: center;
-    }
+  @media (min-width: 1025px){   
 
     header nav{
       display: flex;
@@ -247,9 +243,7 @@
     }
 
     img[alt="lupa"]{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: block;
       width: 27px;
     }
   
