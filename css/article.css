@@ -63,7 +63,7 @@
   main img:nth-child(1){
     width: 400px;
     border-radius: 10px;
-
+    object-fit: cover;
   }
 
   h2 + img{

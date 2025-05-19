@@ -9,6 +9,16 @@
     font-family: "Raleway";
     src: url("../assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
   }
+
+  body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  }
+
+  main {
+  flex: 1;
+  }
   
   *{
     margin: 0;
@@ -136,7 +146,6 @@
   footer{
     width: 100%;
     display: flex;
-    position: absolute;
     justify-content:flex-end ;
     flex-direction: column;
     background-color: var(--principal-color);
@@ -160,7 +169,6 @@
     align-items: center;
     padding-top: 10px;
     padding-right: 5px;
-    width: 100%;
   }
   
   #nav-footer nav ul li{
@@ -171,6 +179,10 @@
     padding-bottom: 20px;
   }
   
+  #nav-footer nav:nth-child(3){
+    padding-right: 10px;
+  }
+
   footer div{
     font-size: 0.8em;
     width: 100%;
@@ -242,8 +254,15 @@
       font-size: 1.3em;
     }
 
+    header button:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 4px;
+    }
+
+
     img[alt="lupa"]{
       display: block;
+      margin-right: 30x;
       width: 27px;
     }
   
@@ -257,11 +276,12 @@
 
     footer div ul li a{
         text-decoration: none;
-        font-size: 0.em;
+        font-size: 0.9em;
     }
     
     #copy p{
-      font-size: 0.9em;
+      font-size: 0.8em;
+      padding: 10px;
     }
     
     footer img{
