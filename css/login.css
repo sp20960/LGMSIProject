@@ -27,7 +27,7 @@ main{
   flex-direction: column;
   justify-content: center;
   box-shadow: 6px 5px 5px var(--principal-color);
-  padding: 20px;
+  padding-bottom: 10px;
 }
 
 h2{

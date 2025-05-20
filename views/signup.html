@@ -43,14 +43,24 @@
       <h2>Sign Up</h2>
       <hr>
       <form action="">
-        <input type="text" name="user" id="username_id" placeholder="Username" required>
-        <input type="password" name="password" id="password_id" placeholder="Password" required>
-        <input type="password" name="re-password" id="re-password_id" placeholder="Re-Password" required>
-        <div class="checkbox-container">
-          <input type="checkbox" name="politica" id="politica_id" required>
-          <label for="politica">Acxeptar les Polítiques de Privacitat</label>
+        <div class="input-container">
+          <input type="text" name="user" id="username-id" placeholder="Username" required>
+          <p>Longitud mínima de 4 caràcters</p>
         </div>
-        <input type="submit" value="Sign Up">
+        <div class="input-container">
+          <input type="password" name="password" id="password-id" placeholder="Password" required>
+          <p>Longitud mínima de 6 caràcters</p>
+          <p>Ha de contenir 1 mayuscula</p>
+        </div>
+        <div class="input-container">
+          <input type="password" name="re-password" id="repassword-id" placeholder="Re-Password" required>
+          <p>Ha de coincidir amb la teva contrasenya</p>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" name="politica" id="politica-id" required>
+          <label for="politica">Acceptar les Polítiques de Privacitat*</label>
+        </div>
+        <input type="submit" id="submit-id" value="Sign Up">
       </form>
       <a id="login">Log In</a>
     </div>
