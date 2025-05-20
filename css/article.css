@@ -61,19 +61,14 @@
   }
 
   main img:nth-child(1){
-    width: 400px;
+    width: 380px;
     border-radius: 10px;
     object-fit: cover;
   }
 
   h2 + img{
-    width:400px;
+    width: 380px;
     
-  }
-
-  section{
-    margin: 20px;
-    padding: 0 20px;
   }
 
   @media (min-width: 1025px){
