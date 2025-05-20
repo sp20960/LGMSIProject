@@ -16,21 +16,21 @@ btnClose.addEventListener("click", () => {
 });
 
 logoHeader.addEventListener("click", () => {
-  location.href = "/index.html";
+  location.href = "/LGMSIProject/index.html";
 });
 
 logoFooter.addEventListener("click", () => {
-  location.href = "/index.html";
+  location.href = "/LGMSIProject/index.html";
 });
 
 btnLogIn.addEventListener("click", () => {
-  location.href = "/views/login.html";
+  location.href = "/LGMSIProject/views/login.html";
 });
 
 aHeaderHome.addEventListener("click", () => {
-  location.href = "/index.html";
+  location.href = "/LGMSIProject/index.html";
 })
 
 aFooterHome.addEventListener("click", () => {
-  location.href = "/index.html";
+  location.href = "/LGMSIProject/index.html";
 })
