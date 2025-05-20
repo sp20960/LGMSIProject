@@ -5,18 +5,14 @@
   --secondary-color: #2b2b2b;
 }
 
-body{
-  height: 100px;
-}
-
 main{
-  height: 70vh;
   text-align: center;
   display: flex;
   background-color: var(--secondary-color);
   justify-content: center;
   align-items: center;
   font-family: "Raleway";
+  padding: 100px;
 }
 
 .login-container{
@@ -48,13 +44,18 @@ input[type="text"]{
 }
 
 input[type="password"]{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding: 10px;
+}
+
+input[name="re-password"]{
+  margin-bottom: 40px;
 }
 
 .checkbox-container{
   display: flex;
   gap: 10px;
+ 
   margin-bottom: 20px;
 }
 
@@ -79,18 +80,27 @@ input[type="submit"]{
 
 @media (min-width: 1025px){
 
-  .login-container{
-    width: 50%;
+  main{
+    padding: 70px;
   }
-
-  form{
-    padding: 30px 70px 30px 70px;
-  } 
-}
-
-@media (min-width: 577px) and (max-width: 1024px){
 
   .login-container{
     width: 60%;
   }
+
+  form{
+    padding: 30px 70px 30px 70px;
+  }
+  
 }
+
+@media (min-width: 577px) and (max-width: 1024px){
+
+  main{
+    padding: 70px;
+  }
+
+  .login-container{
+    width: 60%;
+  }
+} 
