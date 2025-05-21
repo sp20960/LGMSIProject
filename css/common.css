@@ -62,11 +62,22 @@
     z-index: 1;
     background-color: var(--secondary-color);
   }
+
+  header nav ul hr{
+    display: none;
+    background: linear-gradient(to right, #2b272d, #c22222, #e81010);
+    height: 3px;
+    border-radius: 10px;
+  }
   
   .nav-visible{
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .nav-visible hr:last-child{
+    margin-bottom: 20px;
   }
   
   #btn-menu, #btn-close{
@@ -88,12 +99,11 @@
   header nav ul{
     list-style: none;
     padding-top: 80px;
-    
+    width: 80%;  
   }
   
   header nav ul li{
     padding: 10px;
-  
   }
   
   header nav ul li a{
@@ -222,6 +232,14 @@
   
   #copy p{
     font-size: 0.7em;
+  }
+
+  .show{
+    display: flex;
+  }
+
+  .hide{
+    display: none;
   }
 
   @media (min-width: 1025px){   

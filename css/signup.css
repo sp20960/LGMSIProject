@@ -5,6 +5,12 @@
   --secondary-color: #2b2b2b;
 }
 
+@font-face {
+  font-family: "Merriweather";
+  src: url(../assets/fonts/Merriweather/Merriweather-Regular.ttf);
+}
+
+
 main{
   text-align: center;
   display: flex;
@@ -32,7 +38,7 @@ h2{
   font-size: 1.3em;
 }
 
-p{
+.signup-container p{
   display: none;
   text-align: start;
   color: var(--text-color);
@@ -50,6 +56,7 @@ form{
   display: flex;
   flex-direction: column;
   gap: 5px;
+  position: relative;
 }
 
 input[type="text"]{
@@ -78,6 +85,15 @@ input[type="password"]{
   background-color: green;
 }
 
+.input-container img{
+  display: none;
+  width: 20px;
+  position: absolute;
+  top: 19%;
+  right: 0;
+  transform: translate(110%);
+}
+
 .checkbox-container{
   display: flex;
   gap: 10px;
@@ -95,12 +111,36 @@ input[type="submit"]{
   text-align: center;
   color: var(--principal-color);
   padding: 5px;
+  
 }
 
 .signup-container a{
   color: var(--text-color);
   text-decoration: underline;
   cursor: pointer;
+}
+
+.signup_successful{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup_successful__image{
+  width: 90px;
+}
+
+.signup_successful__text-container{
+  margin-bottom: 20px;
+}
+
+.signup_successful__button{
+  padding: 5px 30px;
+  border-radius: 5px;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  border: solid var(--principal-color);
+  color: var(--text-color);
 }
 
 @media (min-width: 1025px){

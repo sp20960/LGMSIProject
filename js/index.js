@@ -10,13 +10,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const repoName = 'LGMSIProject';
   const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
   const baseURL = isLocal ? '' : `/${repoName}`;
+  const navHr = document.querySelectorAll(".links__separators");
   
   btnMenu.addEventListener("click", () => {
     navHeader.classList.add("nav-visible")  ;
+    navHr.forEach((item) => {
+      item.classList.add("show")
+    })
   });
 
   btnClose.addEventListener("click", () => {
     navHeader.classList.remove("nav-visible");
+    navHr.forEach((item) => {
+      item.classList.remove("show")
+    })
   });
 
   logoHeader.addEventListener("click", () => {

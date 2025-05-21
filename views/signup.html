@@ -47,16 +47,19 @@
           <input type="text" name="user" id="username-id" placeholder="Username" required>
           <p>Longitud mínima de 4 caràcters</p>
           <p>Usuari disponible</p>
+          <img src="../assets/img/check-form.svg" alt="camp-validat">
         </div>
         <div class="input-container">
           <input type="password" name="password" id="password-id" placeholder="Password" required>
           <div id = "passwordStrength-id"></div>
           <p>Longitud mínima de 6 caràcters</p>
           <p>Ha de contenir 1 mayuscula</p>
+          <img src="../assets/img/check-form.svg" alt="camp-validat">
         </div>
         <div class="input-container">
           <input type="password" name="re-password" id="repassword-id" placeholder="Re-Password" required>
           <p>Ha de coincidir amb la teva contrasenya</p>
+          <img src="../assets/img/check-form.svg" alt="camp-validat">
         </div>
         <div class="checkbox-container">
           <input type="checkbox" name="politica" id="politica-id" required>
@@ -64,7 +67,16 @@
         </div>
         <input type="submit" id="submit-id" value="Sign Up">
       </form>
-      <a id="login">Log In</a>
+      <a id="login">LogIn</a>
+    </div>
+
+    <div class="signup_successful">
+      <img class="signup_successful__image" src="../assets/img/check-circle-fill.svg" alt="cercle-fill">
+      <div class="signup_successful__text-container">
+        <h2 class="signup_successful__heading">¡Registre exitos!</h2>
+        <p class="signup_successful__paragraph">La teva compte s'ha creat correctament</p>
+      </div>
+      <button class="signup_successful__button">LogIn</button>
     </div>
   </main>
 

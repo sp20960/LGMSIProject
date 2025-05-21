@@ -1,20 +1,23 @@
-
 document.addEventListener("DOMContentLoaded", () => {
+
   const login = document.getElementById("login");
   const usernameInput = document.getElementById("username-id");
   const passwordInput = document.getElementById("password-id");
   const repasswordInput = document.getElementById("repassword-id");
   const isChecked = document.getElementById("politica-id");
   const btnSubmit = document.getElementById("formSignup-id");
-  const repoName = 'LGMSIProject';
-  const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-  const baseURL = isLocal ? '' : `/${repoName}`;
+  const repoName = "LGMSIProject";
+  const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  const baseURL = isLocal ? "" : `/${repoName}`;
+  const visualCheck = document.querySelectorAll(".input-container img");
+  var btnLoginSuccessful = document.querySelector(".signup_successful__button")
+
 
   //Funció que verifica si l'usuari ja existeix
   function checkIfUserExists(username) {
     for (let i = 0; i < localStorage.length; i++) {
       if (localStorage.key(i) === username) {
-        return true
+        return true;
       }
     }
     return false;
@@ -52,66 +55,65 @@ document.addEventListener("DOMContentLoaded", () => {
       passwordStrengthElement.className = "strong";
       passwordStrengthElement.style.width = "100%";
     }
-  };
+  }
 
   //Link login page
   login.addEventListener("click", () => {
     location.href = `${baseURL}/views/login.html`;
   });
 
+  btnLoginSuccessful.addEventListener("click", () => {
+    location.href = `${baseURL}/views/login.html`;
+  })
+
   // VALIDAR USERNAME
   usernameInput.addEventListener("focus", () => {
-    var usernameLengthError = document.querySelector("#username-id + p")
-    var usernameExistsError = document.querySelector("#username-id + p + p")
-
-    usernameInput.addEventListener("blur", () => {
-      if (usernameInput.value === "") {
-        usernameLengthError.style.display = "none";
-        usernameExistsError.style.display = "none";
-      }
-
-      if(checkIfUserExists(usernameInput.value)){
-        usernameExistsError.style.display = "initial";
-        usernameExistsError.style.color = "red";
-      }else{
-        usernameExistsError.style.display = "initial";
-        usernameExistsError.style.color = "green";
-      }
-
-    });
+    var usernameLengthError = document.querySelector("#username-id + p");
+    var usernameExistsError = document.querySelector("#username-id + p + p");
 
     usernameInput.addEventListener("input", () => {
       if (usernameInput.value.length < 4) {
         usernameLengthError.style.display = "initial";
-        usernameLengthError.style.color = "red"
-
+        usernameLengthError.style.color = "red";
       } else if (usernameInput.value.length >= 4) {
-        usernameLengthError.style.color = "green"
+        usernameLengthError.style.color = "green";
+      }
+    });
+
+    usernameInput.addEventListener("blur", () => {
+      if (checkIfUserExists(usernameInput.value)) {
+        usernameExistsError.style.display = "initial";
+        usernameExistsError.style.color = "red";
+      } else {
+        usernameExistsError.style.display = "initial";
+        usernameExistsError.style.color = "green";
+      }
+
+      if (usernameInput.value === "") {
+        usernameLengthError.style.display = "none";
+        usernameExistsError.style.display = "none";
+        visualCheck[0].style.display = "none"
+      }
+
+      if (usernameInput.value.length >= 4 && !checkIfUserExists(usernameInput.value)){
+        visualCheck[0].style.display = "block"
       }
     });
   });
 
   //VALIDAR CONTRASENYA
   passwordInput.addEventListener("focus", () => {
-    var expCharacters = /[A-Z]/
-    var passwordLengthError = document.querySelector("#password-id + div + p")
-    var passwordMayusError = document.querySelector("#password-id + div + p + p")
+    var expCharacters = /[A-Z]/;
+    var passwordLengthError = document.querySelector("#password-id + div + p");
+    var passwordMayusError = document.querySelector("#password-id + div + p + p");
     var passwordStrengthElement = document.getElementById("passwordStrength-id");
 
-    passwordLengthError.style.display = "initial"
-    passwordMayusError.style.display = "initial"
-
-    passwordInput.addEventListener("blur", () => {
-      if (passwordInput.value === "") {
-        passwordLengthError.style.display = "none";
-        passwordMayusError.style.display = "none";
-        passwordStrengthElement.style.display = "none"
-      }
-    });
+    passwordLengthError.style.display = "initial";
+    passwordMayusError.style.display = "initial";
 
     passwordInput.addEventListener("input", () => {
       if (passwordInput.value !== "") {
-        passwordStrengthElement.style.display = "block"
+        passwordStrengthElement.style.display = "block";
         checkPasswordStrength();
       }
 
@@ -126,40 +128,66 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         passwordMayusError.style.color = "green";
       }
-
     });
+
+     passwordInput.addEventListener("blur", () => {
+      if (passwordInput.value === "") {
+        passwordLengthError.style.display = "none";
+        passwordMayusError.style.display = "none";
+        passwordStrengthElement.style.display = "none";
+        visualCheck[1].style.display = "none";
+      }
+
+      if (passwordInput.value.length > 6 && expCharacters.test(passwordInput.value)){
+        visualCheck[1].style.display = "block"
+      }else {
+        visualCheck[1].style.display = "none"
+      }
+    });
+
   });
 
-  //VALIDAR REPETIR CONTRASENYA 
+  //VALIDAR REPETIR CONTRASENYA
   repasswordInput.addEventListener("input", () => {
-    const passwordRepeatError = document.querySelector("#repassword-id + p")
+    const passwordRepeatError = document.querySelector("#repassword-id + p");
 
     if (repasswordInput.value !== passwordInput.value) {
       passwordRepeatError.style.display = "initial";
       passwordRepeatError.style.color = "red";
     } else {
-      passwordRepeatError.style.color = "green"
+      passwordRepeatError.style.color = "green";
     }
 
     repasswordInput.addEventListener("blur", () => {
       if (repasswordInput.value === "") {
-        passwordRepeatError.style.display = "none"
+        passwordRepeatError.style.display = "none";
+      }
+
+      if (repasswordInput.value === passwordInput.value){
+        visualCheck[2].style.display = "block"
+      }else{
+        visualCheck[2].style.display = "none"
       }
     });
   });
 
   //VALIDAR SUBMIT
   btnSubmit.addEventListener("submit", (e) => {
-    var expCharacters = /[A-Z]/
+    var expCharacters = /[A-Z]/;
+    var signupContainer = document.querySelector(".signup-container")
+    var signupSuccessfulContainer = document.querySelector(".signup_successful")
     e.preventDefault();
-    if (usernameInput.value.length >= 4
-      && passwordInput.value.length > 6
-      && expCharacters.test(passwordInput.value)
-      && repasswordInput.value === passwordInput.value
-      && isChecked.checked
-      && !checkIfUserExists(usernameInput.value)
+    if (
+      usernameInput.value.length >= 4 &&
+      passwordInput.value.length > 6 &&
+      expCharacters.test(passwordInput.value) &&
+      repasswordInput.value === passwordInput.value &&
+      isChecked.checked &&
+      !checkIfUserExists(usernameInput.value)
     ) {
-      localStorage.setItem(usernameInput.value, passwordInput.value);
+      console.log("object");
+      signupContainer.style.display = "none";
+      signupSuccessfulContainer.style.display = "flex";
     }
   });
 });
