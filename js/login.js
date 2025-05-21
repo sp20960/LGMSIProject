@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     location.href = `${baseURL}/views/signup.html`;
   });
 
+  
+
 });
 
 
