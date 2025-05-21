@@ -10,6 +10,7 @@ main{
   text-align: center;
   background-color: var(--secondary-color);
   font-family: "Raleway";
+  padding: 5px;
 }
 
 main h1,  main h2, main p{
@@ -64,6 +65,7 @@ main img{
   main section{
     display: inline-block;
     width: 100%;
+    padding: 0;
   }
 
   .card img{
@@ -97,6 +99,9 @@ main img{
 }
 
 @media (min-width: 577px) and (max-width: 1024px){
+  main{
+    padding: 0;
+  }
 
   .card{
     width: 49%;

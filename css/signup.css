@@ -68,6 +68,7 @@ input[type="password"]{
 .checkbox-container label{
   color: var(--text-color);
   font-size: 0.7em;
+  text-align: start;
 }
 
 input[type="submit"]{

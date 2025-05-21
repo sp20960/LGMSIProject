@@ -1,14 +1,15 @@
-const login = document.getElementById("login");
-const usernameInput = document.getElementById("username-id");
-const passwordInput = document.getElementById("password-id");
-const repasswordInput = document.getElementById("repassword-id");
-const btnSubmit = document.getElementById("submit-id");
-
-
 document.addEventListener("DOMContentLoaded", () => {
+  const login = document.getElementById("login");
+  const usernameInput = document.getElementById("username-id");
+  const passwordInput = document.getElementById("password-id");
+  const repasswordInput = document.getElementById("repassword-id");
+  const btnSubmit = document.getElementById("submit-id");
+  const repoName = 'LGMSIProject';
+  const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  const baseURL = isLocal ? '' : `/${repoName}`;
 
   login.addEventListener("click", () => {
-    location.href = "/LGMSIProject/views/login.html";
+    location.href = `${baseURL}/views/login.html`;
   });
 
   // VALIDAR USERNAME
