@@ -185,9 +185,18 @@ document.addEventListener("DOMContentLoaded", () => {
       isChecked.checked &&
       !checkIfUserExists(usernameInput.value)
     ) {
-      console.log("object");
       signupContainer.style.display = "none";
       signupSuccessfulContainer.style.display = "flex";
     }
   });
+
+  document.querySelector("#submit-id").addEventListener("click", () => {
+    if (!isChecked.checked){
+      console.log("object");
+      document.querySelector('label[for="politica"]').style.color = "red";
+    }else {
+      document.querySelector('label[for="politica"]').style.color = "white";
+
+    }
+  })
 });
