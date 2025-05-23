@@ -190,13 +190,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  document.querySelector("#submit-id").addEventListener("click", () => {
-    if (!isChecked.checked){
-      console.log("object");
-      document.querySelector('label[for="politica"]').style.color = "red";
-    }else {
-      document.querySelector('label[for="politica"]').style.color = "white";
 
-    }
-  })
 });
