@@ -28,6 +28,9 @@ main{
   justify-content: center;
   box-shadow: 6px 5px 5px var(--principal-color);
   padding-bottom: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(to right, rgb(129, 2, 2), rgb(93, 3, 138)) 1;
 }
 
 h2{
@@ -43,14 +46,27 @@ form{
   padding: 30px 50px 20px 50px;
 }
 
-input[type="text"]{
+.login-container__input-container{
+  display: flex;
+  flex-direction: column;
   margin-bottom: 30px;
+}
+
+.login-container__input-container p{
+  display:  none;
+  font-size: 0.6rem;
+  margin-top: 2px;
+  
+}
+
+input[type="text"]{
   padding: 10px;
+  width: 100%;
 }
 
 input[type="password"]{
-  margin-bottom: 50px;
   padding: 10px;
+  width: 100%;
 }
 
 .checkbox-container{

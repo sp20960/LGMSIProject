@@ -11,16 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const baseURL = isLocal ? "" : `/${repoName}`;
   const visualCheck = document.querySelectorAll(".input-container img");
   var btnLoginSuccessful = document.querySelector(".signup_successful__button")
+  var checkBoxEditor = document.querySelector("#admin-id")
+  var usuaris = JSON.parse(localStorage.getItem("usuaris")) || [];
 
 
   //Funció que verifica si l'usuari ja existeix
   function checkIfUserExists(username) {
-    for (let i = 0; i < localStorage.length; i++) {
-      if (localStorage.key(i) === username) {
-        return true;
+    let res = false;
+    usuaris.forEach(u => {
+      if(u.usuari === username){
+        res= true;
       }
-    }
-    return false;
+    });
+    return res;
   }
 
   //Funció que verifica la complexitat de la contrasenya per aplicar un estil a una barra que indica la complexitat de la contrasenya
@@ -185,7 +188,17 @@ document.addEventListener("DOMContentLoaded", () => {
       isChecked.checked &&
       !checkIfUserExists(usernameInput.value)
     ) {
-      console.log("object");
+
+      usuaris.push(
+        {
+          "usuari": usernameInput.value,
+          "pwd": passwordInput.value,
+          "admin": checkBoxEditor.checked ? true : false
+        }
+      );
+
+      localStorage.setItem("usuaris", JSON.stringify(usuaris));
+
       signupContainer.style.display = "none";
       signupSuccessfulContainer.style.display = "flex";
     }

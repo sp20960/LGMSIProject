@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logoHeader = document.querySelector('img[alt="logo"]');
   const logoFooter = document.querySelector('img[alt="logo-reduit"]')
   const btnLogIn = document.querySelector("#login-id");
+  const logoutImg = document.querySelector('img[alt = "logout"]')
   const aHeaderHome = document.querySelector("#nav-header ul li:nth-child(1)");
   const aFooterHome = document.querySelector("#nav-footer > nav ul li:nth-child(1)");
   const repoName = 'LGMSIProject';
@@ -45,5 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
   aFooterHome.addEventListener("click", () => {
     location.href = `${baseURL}/index.html`;
   });
+
+  logoutImg.addEventListener("click", () => {
+    localStorage.removeItem("currentSession");
+    location.reload();
+  })
+
+  if(localStorage.getItem("currentSession")){
+    btnLogIn.style.display = "none";
+    logoutImg.style.display = "inherit"
+  }
 });
 

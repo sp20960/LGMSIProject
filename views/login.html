@@ -12,7 +12,7 @@
 </head>
 
 <body>
-   <header>
+  <header>
     <!-- Header-->
     <img src="../assets/img/logo.png" alt="logo" />
 
@@ -25,11 +25,15 @@
       </div>
       <ul>
         <li><a class="links">Home</a></li>
-        <li><a class="links">Qui som?</a></li>
+        <hr class="links__separators">
+        <li><a class="links">About</a></li>
+        <hr class="links__separators">
         <li><a class="links">Contact</a></li>
+        <hr class="links__separators">
       </ul>
       <div>
         <button id="login-id"><a>Login</a></button>
+        <img src="../assets/img/logout.svg" alt="logout">
       </div>
 
       <img src="../assets/img/logo.png" alt="logo-menu" />
@@ -42,12 +46,18 @@
     <div class="login-container">
       <h2>Log In</h2>
       <hr>
-      <form action="">
-        <input type="text" name="user" id="username_id" placeholder="Username" required>
-        <input type="password" name="password" id="password_id" placeholder="Password" required>
+      <form id="formLogIn-id">
+        <div class="login-container__input-container">
+          <input type="text" name="user" id="username-id" placeholder="Username" required>
+          <p>Usuari o contrasenya incorrectes</p>
+        </div>
+        <div class="login-container__input-container">
+          <input type="password" name="password" id="password-id" placeholder="Password" required>
+          <p>Usuari o contrasenya incorrectes</p>
+        </div>
         <input type="submit" value="Log in">
       </form>
-      <a id = "register">Registrarse</a>
+      <a id="register">Registrarse</a>
     </div>
   </main>
 
