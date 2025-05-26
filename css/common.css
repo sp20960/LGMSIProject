@@ -242,13 +242,6 @@
     font-size: 0.7em;
   }
 
-  .show{
-    display: flex;
-  }
-
-  .hide{
-    display: none;
-  }
 
   @media (min-width: 1025px){   
 

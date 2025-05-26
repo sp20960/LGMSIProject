@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const baseURL = isLocal ? '' : `/${repoName}`;
   const signup = document.getElementById("register");
   const btnSubmit = document.getElementById("formLogIn-id");
+  const inputUsername = document.getElementById("username-id")
+  const passwordInput = document.getElementById("password-id")
   var usuaris = JSON.parse(localStorage.getItem("usuaris")) || [];
 
 
@@ -33,20 +35,34 @@ document.addEventListener("DOMContentLoaded", () => {
     location.href = `${baseURL}/views/signup.html`;
   });
 
+  inputUsername.addEventListener("blur", () => {
+    if(inputUsername.value !== "" && passwordInput.value !== ""){
+      document.querySelector('input[type = "submit"]').disabled = false;
+    }else {
+      document.querySelector('input[type = "submit"]').disabled = true;
+    }
+  })
+
+    passwordInput.addEventListener("blur", () => {
+    if(inputUsername.value !== "" && passwordInput.value !== ""){
+      document.querySelector('input[type = "submit"]').disabled = false;
+    } else {
+      document.querySelector('input[type = "submit"]').disabled = true;
+    }
+  })
+
   btnSubmit.addEventListener("submit", (e) =>  {
     e.preventDefault();
-    var inputUsername = document.getElementById("username-id").value
-    var passwordInput = document.getElementById("password-id").value
     var authError = document.querySelectorAll(".login-container__input-container p")
 
-    if (!auth(inputUsername, passwordInput)){
+    if (!auth(inputUsername.value, passwordInput.value)){
       authError.forEach((p) => {
         p.style.display = "inherit"
         p.style.color = "red"
       })
     }else {
-      localStorage.setItem("currentSession", inputUsername);
-      if(checkIfAdmin(inputUsername)){
+      localStorage.setItem("currentSession", inputUsername.value);
+      if(checkIfAdmin(inputUsername.value)){
         location.href = `${baseURL}/views/admin.html`;
       }else {
         location.href = `${baseURL}/index.html`;

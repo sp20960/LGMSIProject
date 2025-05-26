@@ -137,6 +137,11 @@ input[type="submit"]{
   margin-bottom: 20px;
 }
 
+.signup_successful__text-container p{
+  color: var(--text-color);
+}
+
+
 .signup_successful__button{
   padding: 5px 30px;
   border-radius: 5px;

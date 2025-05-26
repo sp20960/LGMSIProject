@@ -60,6 +60,11 @@
     width: 25px;
   }
 
+  img[alt = "liked"]{
+    display: none;
+    width: 25px;
+  }
+
   main img:nth-child(1){
     width: 380px;
     border-radius: 10px;
