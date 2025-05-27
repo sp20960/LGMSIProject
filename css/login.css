@@ -50,6 +50,7 @@ form{
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .login-container__input-container p{
@@ -67,6 +68,15 @@ input[type="text"]{
 input[type="password"]{
   padding: 10px;
   width: 100%;
+}
+
+img[alt="view_pwd"]{
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .checkbox-container{

@@ -242,6 +242,10 @@
     font-size: 0.7em;
   }
 
+  .show{
+    display: inherit;
+  }
+
 
   @media (min-width: 1025px){   
 
