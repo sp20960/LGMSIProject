@@ -88,13 +88,26 @@ input[type="password"]{
   background-color: green;
 }
 
-.input-container img{
+img[alt="camp-validat"]{
   display: none;
   width: 20px;
   position: absolute;
   top: 19%;
   right: 0;
   transform: translate(110%);
+}
+
+img[alt="view_pwd"], img[alt="view_repwd"] {
+  display: none;
+  position: absolute;
+  top: 26%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+img[alt="view_repwd"]{
+  top: 40%;
 }
 
 .checkbox-container{

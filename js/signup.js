@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const repoName = "LGMSIProject";
   const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
   const baseURL = isLocal ? "" : `/${repoName}`;
+  const eyePwd = document.querySelector('img[alt="view_pwd"]');
+  const eyeRePwd = document.querySelector('img[alt="view_repwd"]')
   const visualCheck = document.querySelectorAll(".input-container img");
   var btnLoginSuccessful = document.querySelector(".signup_successful__button")
   var checkBoxEditor = document.querySelector("#admin-id")
@@ -118,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (passwordInput.value !== "") {
         passwordStrengthElement.style.display = "block";
         checkPasswordStrength();
+        eyePwd.style.display = "inherit"
       }
 
       if (passwordInput.value.length < 6) {
@@ -139,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         passwordMayusError.style.display = "none";
         passwordStrengthElement.style.display = "none";
         visualCheck[1].style.display = "none";
+        eyePwd.style.display = "none"
       }
 
       if (passwordInput.value.length > 6 && expCharacters.test(passwordInput.value)){
@@ -150,10 +154,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+  eyePwd.addEventListener("click", () => {
+    if (eyePwd.src.endsWith("eye_pwd.svg")) {
+      console.log("object");
+      eyePwd.src = "../assets/img/eyeOff_pwd.svg";
+      passwordInput.type = "text"
+    }else {
+      eyePwd.src = "../assets/img/eye_pwd.svg";
+      passwordInput.type = "password"
+    }
+  });
+
   //VALIDAR REPETIR CONTRASENYA
   repasswordInput.addEventListener("input", () => {
     const passwordRepeatError = document.querySelector("#repassword-id + p");
-
+    eyeRePwd.style.display = "inherit"
     if (repasswordInput.value !== passwordInput.value) {
       passwordRepeatError.style.display = "initial";
       passwordRepeatError.style.color = "red";
@@ -164,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
     repasswordInput.addEventListener("blur", () => {
       if (repasswordInput.value === "") {
         passwordRepeatError.style.display = "none";
+        eyeRePwd.style.display = "none"
       }
 
       if (repasswordInput.value === passwordInput.value){
@@ -173,6 +189,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  
+  eyeRePwd.addEventListener("click", () => {
+    if (eyeRePwd.src.endsWith("eye_pwd.svg")) {
+      eyeRePwd.src = "../assets/img/eyeOff_pwd.svg";
+      repasswordInput.type = "text"
+    }else {
+      eyeRePwd.src = "../assets/img/eye_pwd.svg";
+      repasswordInput.type = "password"
+    }
+
+  })
 
   //VALIDAR SUBMIT
   btnSubmit.addEventListener("submit", (e) => {
