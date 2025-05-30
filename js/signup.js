@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const eyePwd = document.querySelector('img[alt="view_pwd"]');
   const eyeRePwd = document.querySelector('img[alt="view_repwd"]')
   const visualCheck = document.querySelectorAll(".input-container img");
-  var btnLoginSuccessful = document.querySelector(".signup_successful__button")
-  var checkBoxEditor = document.querySelector("#admin-id")
+  const btnLoginSuccessful = document.querySelector(".signup_successful__button")
+  const checkBoxEditor = document.querySelector("#admin-id")
   var usuaris = JSON.parse(localStorage.getItem("usuaris")) || [];
 
 
