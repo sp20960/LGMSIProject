@@ -1,60 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const btnMenu = document.querySelector("#btn-menu");
-  const navHeader = document.querySelector("#nav-header");
-  const btnClose = document.querySelector("#btn-close img");
-  const logoHeader = document.querySelector('img[alt="logo"]');
-  const logoFooter = document.querySelector('img[alt="logo-reduit"]')
-  const btnLogIn = document.querySelector("#login-id");
-  const logoutImg = document.querySelector('img[alt = "logout"]')
-  const aHeaderHome = document.querySelector("#nav-header ul li:nth-child(1)");
-  const aFooterHome = document.querySelector("#nav-footer > nav ul li:nth-child(1)");
+  const aBugatti = document.querySelector('img[alt="bugatti-tourbillon"]');
+  const aBrabus = document.querySelector('img[alt="brabus-bigboy"]');
+  const ap1 = document.querySelector('img[alt="p1"]');
+  const aNissanGtr = document.querySelector('img[alt="nissan-gtr"]');
+  const aSylvia = document.querySelector('img[alt="s15"]');
+  const aAudiR8 = document.querySelector('img[alt="audi-r8"]');
   const repoName = 'LGMSIProject';
   const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
   const baseURL = isLocal ? '' : `/${repoName}`;
-  const navHr = document.querySelectorAll(".links__separators");
-  
-  btnMenu.addEventListener("click", () => {
-    navHeader.classList.add("nav-visible")  ;
-    navHr.forEach((item) => {
-      item.classList.add("show")
-    })
+
+  aBugatti.addEventListener("click", () => {
+    location.href = `${baseURL}/views/article-bugatti.html`;
   });
 
-  btnClose.addEventListener("click", () => {
-    navHeader.classList.remove("nav-visible");
-    navHr.forEach((item) => {
-      item.classList.remove("show")
-    })
+  aBrabus.addEventListener("click", () => {
+    location.href = `${baseURL}/views/article-brabus.html`;
   });
 
-  logoHeader.addEventListener("click", () => {
-    location.href = `${baseURL}/index.html`;
+  ap1.addEventListener("click", () => {
+    location.href = `${baseURL}/views/article-p1.html`;
   });
 
-  logoFooter.addEventListener("click", () => {
-    location.href = `${baseURL}/index.html`;
+  aNissanGtr.addEventListener("click", () => {
+    location.href = `${baseURL}/views/article-nissan-gtr.html`;
   });
 
-  btnLogIn.addEventListener("click", () => {
-    location.href = `${baseURL}/views/login.html`;
+  aSylvia.addEventListener("click", () => {
+    location.href = `${baseURL}/views/article-s15.html`;
   });
 
-  aHeaderHome.addEventListener("click", () => {
-    location.href = `${baseURL}/index.html`;
+  aAudiR8.addEventListener("click", () => {
+    location.href = `${baseURL}/views/article-audi-r8.html`;
   });
 
-  aFooterHome.addEventListener("click", () => {
-    location.href = `${baseURL}/index.html`;
-  });
-
-  logoutImg.addEventListener("click", () => {
-    localStorage.removeItem("currentSession");
-    location.reload();
-  })
-
-  if(localStorage.getItem("currentSession")){
-    btnLogIn.style.display = "none";
-    logoutImg.style.display = "inherit"
-  }
 });
 

@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon" />
 </head>
 
-<body>
+<body id = "p1">
   <header>
     <!-- Header-->
     <img src="../assets/img/logo.png" alt="logo" />
@@ -50,7 +50,11 @@
       <img src="../assets/img/articles/p1.JPG" alt="mclaren-p1" />
       <div class="info">
         <figcaption>| Sam Pons de la Fuente | 21/01/2025</figcaption>
-        <img src="../assets/img/like.png" alt="like" />
+        <div class="info__like-container">
+          <p>0</p>
+          <img src="../assets/img/like.png" alt="like"/>
+          <img src="../assets/img/heart-filled.png" alt="liked">
+        </div>
       </div>
     </div>
 
@@ -154,7 +158,8 @@
       <p>© 2024 TurboTalks. All rights reserved.</p>
     </div>
   </footer>
-  <script src="../js/index.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/article.js"></script>
 </body>
 
 </html>
