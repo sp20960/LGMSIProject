@@ -2,18 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnLike = document.querySelector('img[alt="like"]');
   const btnLiked = document.querySelector('img[alt="liked"]');
   let usuaris = JSON.parse(localStorage.getItem("usuaris")) || [];
-  let likes = JSON.parse(localStorage.getItem("likes")) || {};
+  let usuari_article = JSON.parse(localStorage.getItem("usuari_article")) || [];
   const articleId = document.body.id;
   let countLike = document.querySelector(".info__like-container p");
   const currentSession = localStorage.getItem("currentSession");
-
-  console.log(articleId);
-
-  countLike.textContent = likes[articleId] || 0;
+  const totalLikes = usuari_article.filter(u => u.article === articleId);
+  countLike.textContent = totalLikes.length || 0;
 
   if (currentSession) {
-    const user = usuaris.find(u => u.usuari === currentSession);
-    if (user && user[articleId] === true) {
+    const user = usuari_article.find(u => u.usuari === currentSession && u.article === articleId);
+    
+    if (user) {
       btnLiked.style.display = "inherit";
       btnLike.style.display = "none";
     } else {
@@ -31,14 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
       btnLike.style.display = "none";
 
       countLike.textContent = parseInt(countLike.textContent) + 1;
-      likes[articleId] = parseInt(countLike.textContent);
-      localStorage.setItem("likes", JSON.stringify(likes));
-
-      const user = usuaris.find(u => u.usuari === currentSession);
-      if (user) {
-        user[articleId] = true;
-        localStorage.setItem("usuaris", JSON.stringify(usuaris));
-      }
+      usuari_article.push(
+        {
+          "article":articleId,
+          "usuari":currentSession
+        }
+      );
+      localStorage.setItem("usuari_article", JSON.stringify(usuari_article));
     }
   });
 
@@ -47,19 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
       btnLiked.style.display = "none";
       btnLike.style.display = "inherit";
 
-      countLike.textContent =
-        parseInt(countLike.textContent) === 0
-          ? 0
-          : parseInt(countLike.textContent) - 1;
+      countLike.textContent = parseInt(countLike.textContent) === 0 ? 0 : parseInt(countLike.textContent) - 1;
 
-      likes[articleId] = parseInt(countLike.textContent);
-      localStorage.setItem("likes", JSON.stringify(likes));
-
-      const user = usuaris.find(u => u.usuari === currentSession);
-      if (user && user[articleId]) {
-        user[articleId] = false;
-        localStorage.setItem("usuaris", JSON.stringify(usuaris));
-      }
+      const indexDelete = usuari_article.findIndex(u => u.article === articleId && u.usuari === currentSession);
+      usuari_article.splice(indexDelete, 1);
+      localStorage.setItem("usuari_article", JSON.stringify(usuari_article));
     }
   });
 });

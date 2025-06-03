@@ -12,20 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Funció que verifica si existeix l'usuari
   function auth(username, password) {
-    var res = false;
-    usuaris.forEach(element => {
-      if(element.usuari === username && element.pwd === password){
-        res = true;
-      }
-    });
-    return res
+    const user = usuaris.find(u => u.usuari === username);
+    if (!user) return false;
+
+    const salt = CryptoJS.enc.Hex.parse(user.salt);
+    const derivedKey = CryptoJS.PBKDF2(username, salt, {
+      keySize: 256 / 32,
+      iterations: 10000
+    }).toString();
+
+    return user.pwd === derivedKey;
   }
 
   //Funcio que retorna si l'usuari es editor o lector
-  function checkIfAdmin(username){
+  function checkIfAdmin(username) {
     var res = false;
     usuaris.forEach(element => {
-      if (element.usuari === username && element.admin === true){
+      if (element.usuari === username && element.admin === true) {
         res = true;
       }
     })
@@ -37,19 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   inputUsername.addEventListener("input", () => {
-    if(inputUsername.value !== "" && passwordInput.value !== ""){
+    if (inputUsername.value !== "" && passwordInput.value !== "") {
       document.querySelector('input[type = "submit"]').disabled = false;
-    }else {
+    } else {
       document.querySelector('input[type = "submit"]').disabled = true;
     }
   })
 
   passwordInput.addEventListener("input", () => {
-    if (passwordInput.value != ""){
+    if (passwordInput.value != "") {
       eyePwd.style.display = "inherit";
     }
 
-    if(inputUsername.value !== "" && passwordInput.value !== ""){
+    if (inputUsername.value !== "" && passwordInput.value !== "") {
       document.querySelector('input[type = "submit"]').disabled = false;
     } else {
       document.querySelector('input[type = "submit"]').disabled = true;
@@ -57,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   passwordInput.addEventListener("blur", () => {
-    if (passwordInput.value === ""){
+    if (passwordInput.value === "") {
       eyePwd.style.display = "none"
     }
   })
@@ -67,33 +70,28 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("object");
       eyePwd.src = "../assets/img/eyeOff_pwd.svg";
       passwordInput.type = "text"
-    }else {
+    } else {
       eyePwd.src = "../assets/img/eye_pwd.svg";
       passwordInput.type = "password"
     }
   });
 
-  btnSubmit.addEventListener("submit", (e) =>  {
+  btnSubmit.addEventListener("submit", (e) => {
     e.preventDefault();
     var authError = document.querySelectorAll(".login-container__input-container p")
 
-    if (!auth(inputUsername.value, passwordInput.value)){
+    if (!auth(inputUsername.value, passwordInput.value)) {
       authError.forEach((p) => {
         p.style.display = "inherit"
         p.style.color = "red"
       })
-    }else {
+    } else {
       localStorage.setItem("currentSession", inputUsername.value);
-      if(checkIfAdmin(inputUsername.value)){
+      if (checkIfAdmin(inputUsername.value)) {
         location.href = `${baseURL}/views/admin.html`;
-      }else {
+      } else {
         location.href = `${baseURL}/index.html`;
       }
     }
   });
 });
-
-
-
-
-

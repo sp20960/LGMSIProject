@@ -67,11 +67,14 @@ p {
 
 img[alt="like"] {
   width: 25px;
+  position: relative;
+  object-fit: contain;
 }
 
 img[alt="liked"] {
   display: none;
   width: 25px;
+  object-fit: contain;
 }
 
 main img:nth-child(1) {

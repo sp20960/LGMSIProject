@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkIfUserExists(username) {
     let res = false;
     usuaris.forEach(u => {
-      if(u.usuari === username){
-        res= true;
+      if (u.usuari === username) {
+        res = true;
       }
     });
     return res;
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         visualCheck[0].style.display = "none"
       }
 
-      if (usernameInput.value.length >= 4 && !checkIfUserExists(usernameInput.value)){
+      if (usernameInput.value.length >= 4 && !checkIfUserExists(usernameInput.value)) {
         visualCheck[0].style.display = "block"
       }
     });
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-     passwordInput.addEventListener("blur", () => {
+    passwordInput.addEventListener("blur", () => {
       if (passwordInput.value === "") {
         passwordLengthError.style.display = "none";
         passwordMayusError.style.display = "none";
@@ -145,9 +145,9 @@ document.addEventListener("DOMContentLoaded", () => {
         eyePwd.style.display = "none"
       }
 
-      if (passwordInput.value.length > 6 && expCharacters.test(passwordInput.value)){
+      if (passwordInput.value.length > 6 && expCharacters.test(passwordInput.value)) {
         visualCheck[1].style.display = "block"
-      }else {
+      } else {
         visualCheck[1].style.display = "none"
       }
     });
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("object");
       eyePwd.src = "../assets/img/eyeOff_pwd.svg";
       passwordInput.type = "text"
-    }else {
+    } else {
       eyePwd.src = "../assets/img/eye_pwd.svg";
       passwordInput.type = "password"
     }
@@ -182,20 +182,20 @@ document.addEventListener("DOMContentLoaded", () => {
         eyeRePwd.style.display = "none"
       }
 
-      if (repasswordInput.value === passwordInput.value){
+      if (repasswordInput.value === passwordInput.value) {
         visualCheck[2].style.display = "block"
-      }else{
+      } else {
         visualCheck[2].style.display = "none"
       }
     });
   });
 
-  
+
   eyeRePwd.addEventListener("click", () => {
     if (eyeRePwd.src.endsWith("eye_pwd.svg")) {
       eyeRePwd.src = "../assets/img/eyeOff_pwd.svg";
       repasswordInput.type = "text"
-    }else {
+    } else {
       eyeRePwd.src = "../assets/img/eye_pwd.svg";
       repasswordInput.type = "password"
     }
@@ -207,6 +207,9 @@ document.addEventListener("DOMContentLoaded", () => {
     var expCharacters = /[A-Z]/;
     var signupContainer = document.querySelector(".signup-container")
     var signupSuccessfulContainer = document.querySelector(".signup_successful")
+    const salt = CryptoJS.lib.WordArray.random(128 / 8);
+
+
     e.preventDefault();
     if (
       usernameInput.value.length >= 4 &&
@@ -216,11 +219,16 @@ document.addEventListener("DOMContentLoaded", () => {
       isChecked.checked &&
       !checkIfUserExists(usernameInput.value)
     ) {
+      const key = CryptoJS.PBKDF2(usernameInput.value, salt, {
+        keySize: 256 / 32,
+        iterations: 10000 // Incrementar segons les necessitats
+      });
 
       usuaris.push(
         {
           "usuari": usernameInput.value,
-          "pwd": passwordInput.value,
+          "salt": salt.toString(),
+          "pwd": key.toString(),
           "admin": checkBoxEditor.checked ? true : false
         }
       );
