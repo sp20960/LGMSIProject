@@ -65,7 +65,7 @@ p {
   line-height: 1.45em;
 }
 
-img[alt="like"] {
+img[alt="like"], img[alt="liked"]  {
   width: 25px;
   position: relative;
   object-fit: contain;
@@ -73,8 +73,6 @@ img[alt="like"] {
 
 img[alt="liked"] {
   display: none;
-  width: 25px;
-  object-fit: contain;
 }
 
 main img:nth-child(1) {
